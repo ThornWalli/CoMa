@@ -1,0 +1,206 @@
+@mixin WPCoMa_Controller($critical) {
+
+  @if $critical == false {
+
+    .coma-ghost-element {
+      position: relative;
+
+      border-radius: 3px;
+
+      background: rgba(255, 255, 255, 0.8);
+      opacity: 0.4;
+
+      &:before {
+        @include font-open-sans();
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: attr(lang-placeholder) ' [ ' attr(data-template-name) ' ] ';
+
+        color: #333333;
+
+        white-space: nowrap;
+      }
+
+    }
+
+    .partial[data-partial^="coma/component/controller"] {
+
+      position: relative;
+
+      > .header {
+
+        user-select: none;
+        pointer-events: none;
+
+        z-index: 2;
+        position: absolute;
+        top: 0;
+
+        width: 100%;
+        opacity: 0;
+        transition: opacity .35s ease;
+
+        cursor: default;
+
+        > div {
+
+          @include font-open-sans();
+          font-size: 12px;
+          line-height: 24px;
+
+          text-align: left;
+
+          &, a {
+            color: $color-controller-link-default-color;
+          }
+
+          background-color: $color-wp-bar-background-color;
+
+          &:hover, &:focus {
+            color: $color-wp-link-default-hover-color;
+          }
+
+          @include clearfix();
+
+          > .name {
+            float: left;
+            padding-left: 10px;
+          }
+          ul {
+
+            background-color: $color-wp-bar-background-color;
+
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            @include clearfix();
+
+            margin: 0;
+            padding: 0;
+
+            float: right;
+            list-style: none;
+
+            li {
+
+              float: left;
+              margin: 0;
+
+              a {
+
+                text-decoration: none;
+                display: block;
+                padding: 0 10px;
+
+                &:hover, &:focus {
+                  background: $color-wp-bar-hover-background-color;
+                  color: $color-wp-link-default-hover-color;
+                }
+
+                &:hover, &:focus {
+                  box-shadow: none;
+                }
+
+                &.append {
+
+                  line-height: 19px;
+                  padding-top: 4px;
+                }
+
+              }
+
+              &.item {
+
+                text-align: center;
+
+              }
+              a {
+                width: auto;
+                height: auto;
+                line-height: 24px;
+
+                &:before {
+                  display: inline-block;
+                  overflow: hidden;
+                  vertical-align: top;
+                }
+
+              }
+            }
+
+          }
+
+        }
+
+      }
+
+      > .helper {
+
+        text-align: center;
+        opacity: 0.4;
+
+        font-size: 12px;
+        line-height: 24px;
+
+        user-select: none;
+
+        background: #ffffff;
+        color: #000000;
+        @include font-open-sans();
+
+        &:after {
+          display: inline-block;
+          content: "[ " attr(data-template-name) " ]";
+
+        }
+      }
+
+      > .content {
+
+        @include clearfix();
+
+        img {
+          max-width: 100%;
+          width: auto !important;
+        }
+
+        font-family: initial;
+
+      }
+
+      &.#{$prefix}-show {
+
+        > .header {
+          opacity: 1;
+          box-shadow: 0 0 4px 0 $color-controller-header-shadow;
+          pointer-events: auto;
+        }
+
+        > .content {
+          display: block;
+        }
+      }
+
+      border: solid transparent 1px;
+
+      &.coma-highlight {
+
+        border: dashed #cccccc 1px;
+
+        .helper {
+
+          opacity: 0.8;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

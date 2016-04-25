@@ -1,0 +1,41 @@
+@mixin WPCoMa_FieldColorPicker($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/field/color-picker"] {
+
+      display: inline-block;
+      vertical-align: middle;
+
+
+      .wp-picker-container {
+        position: relative;
+        z-index: 10;
+        &.wp-picker-active {
+          z-index: 11;
+        }
+      }
+
+      @media screen and (max-width: $media-wp-tablet-max) {
+
+      }
+      @media screen and (min-width: $media-wp-desktop-min) {
+
+        position: relative;
+        height: 24px;
+        width: 50%;
+
+        > div {
+
+          position: absolute;
+          top: 0;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,20 @@
+@mixin WPCoMa_PreviewButton($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/assetboard/preview-button"] {
+
+      position: absolute;
+      top: 50px;
+      right: 50px;
+
+      display: block;
+      background: rgba(0, 0, 0, 0.4);
+
+      color: white;
+
+    }
+
+  }
+
+}

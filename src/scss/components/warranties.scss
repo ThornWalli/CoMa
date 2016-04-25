@@ -1,0 +1,76 @@
+@mixin WPCoMa_Warranties($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/warranties"] {
+
+      margin: 20px 0;
+
+      .controls {
+
+        input {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+      }
+
+      .capabilities {
+
+        > ul {
+
+          @include clearfix();
+
+          > li {
+            float: left;
+
+            width: 100%;
+
+            @media (min-width: $screen-sm-min) {
+              width: 50%;
+            }
+            @media (min-width: $screen-md-min) {
+              width: 33.333333%;
+            }
+            @media (min-width: $screen-lg-min) {
+              width: 25%;
+            }
+
+            label {
+
+              transition: background-color .65s ease, color .65s ease;
+              background: rgba(0, 0, 0, .1);
+              border-radius: 3px;
+
+              display: inline-block;
+              padding: 4px 8px;
+              span {
+                overflow: hidden;
+                display: block;
+              }
+            }
+
+            input {
+              margin-top: 0;
+              margin-bottom: 0;
+
+            }
+
+            &:hover + label, input:checked + label {
+
+              background-color: rgba(0, 0, 0, .4);
+              color: $color-white;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

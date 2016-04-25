@@ -1,0 +1,41 @@
+@mixin WPCoMa_ControllerComponent($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/controller/component"] {
+
+      &.coma-move {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+
+        opacity: 0.4;
+
+        transform: translateX(-50%);
+
+        &, * {
+          pointer-events: none !important;
+        }
+
+      }
+
+    }
+
+    html.coma-component-move {
+
+
+      a, input, select, textarea {
+        pointer-events: none;
+      }
+      &, * {
+        cursor: move !important;
+        user-select: none;
+      }
+
+    }
+
+  }
+
+}

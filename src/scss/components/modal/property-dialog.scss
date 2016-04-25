@@ -1,0 +1,169 @@
+@mixin WPCoMa_ModalPropertyDialog($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/modal/property-dialog"] {
+
+      z-index: 100000;
+
+      > .content {
+
+        padding: 0;
+        > section {
+
+          @-webkit-keyframes spin {
+            100% {
+              transform: translate(-50%, -50%) rotate(360deg);
+            }
+          }
+          @keyframes spin {
+            100% {
+              transform: translate(-50%, -50%) rotate(360deg);
+            }
+          }
+
+          &:before {
+            content: $dashicons-admin-generic;
+            @include font-dashicons();
+            font-size: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            line-height: 50px;
+
+            transform: translate(-50%, -50%) rotate(0deg);
+
+            //transform: scale(-50%,-50%) rotate(0deg);
+            //transition: transform 1s;
+
+            animation-name: spin;
+            animation-timing-function: linear;
+            animation-duration: 3.6s;
+            animation-iteration-count: infinite;
+          }
+          > .fullscreen-toggle, > .close {
+            &:before {
+              @include font-dashicons();
+
+              font-size: 32px;
+              line-height: 48px;
+              height: 48px;
+
+              @media (min-width: $media-wp-desktop-min) {
+                font-size: 24px;
+                line-height: 32px;
+                height: 32px;
+              }
+
+            }
+
+            &, &:before {
+              color: $color-wp-text-header-color;
+            }
+            &:hover {
+              &, &:before {
+                color: $color-wp-link-default-hover-color;
+              }
+            }
+
+          }
+
+          > .fullscreen-toggle {
+
+            position: absolute;
+            top: 0;
+            right: 40px;
+
+            box-sizing: content-box;
+            color: $color-wp-text-header-color;
+
+            text-decoration: none;
+            &:before {
+              content: $dashicons-editor-expand;
+            }
+
+            html.modal-fullscreen & {
+              &:before {
+                content: $dashicons-editor-contract;
+              }
+            }
+          }
+
+          > .close {
+            &:before {
+              content: $dashicons-no;
+            }
+          }
+
+          height: 100%;
+
+          max-width: $media-wp-tablet-max;
+          padding: 0;
+
+          html.modal-fullscreen & {
+            max-width: none;
+
+          }
+
+          > article {
+
+            > div:first-child {
+
+              > h2 {
+                margin: 0;
+                font-size: 16px;
+                line-height: 46px;
+                padding: 0 10px;
+
+                color: $color-wp-text-header-color;
+                background-color: $color-wp-bar-background-color;
+
+                @media (min-width: $media-wp-desktop-min) {
+                  font-size: 13px;
+                  line-height: 32px;
+                }
+
+              }
+
+              > .content {
+
+                margin: 0;
+                width: 100%;
+
+                position: absolute;
+                bottom: 0;
+                top: 46px;
+
+                @media (min-width: $media-wp-desktop-min) {
+                  top: 32px;
+                }
+
+                background: $color-white;
+
+              }
+            }
+
+            .partial[data-partial="coma/assetboard/message"] {
+
+              width: 80%;
+
+              position: absolute;
+              top: 50%;
+              left: 50%;
+
+              transform: translate(-50%, -50%);
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

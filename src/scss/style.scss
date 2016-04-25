@@ -1,0 +1,45 @@
+@import "./common/vars.scss";
+@import "./extern.scss";
+@import "./common/mixins.scss";
+@import "./assetboard.scss";
+@import "./components.scss";
+
+@include WPCoMa_PreviewButton($criticalCSS);
+@include WPCoMa_PropertyDialog($criticalCSS);
+@include WPCoMa_TabContainer($criticalCSS);
+@include WPCoMa_PropertyDialogFieldRow($criticalCSS);
+@include WPCoMa_Modal($criticalCSS);
+@include WPCoMa_ModalPropertyDialog($criticalCSS);
+@include WPCoMa_Logs($criticalCSS);
+
+@include WPCoMa_Controller($criticalCSS);
+@include WPCoMa_ControllerArea($criticalCSS);
+@include WPCoMa_ControllerComponent($criticalCSS);
+
+@include WPCoMa_FieldColorPicker($criticalCSS);
+@include WPCoMa_FieldDateSelect($criticalCSS);
+@include WPCoMa_FieldLinkSelect($criticalCSS);
+@include WPCoMa_FieldMediaSelect($criticalCSS);
+@include WPCoMa_FieldMultipleValues($criticalCSS);
+@include WPCoMa_FieldCodeEditor($criticalCSS);
+
+@include WPCoMa_CacheRefresh($criticalCSS);
+@include WPCoMa_Warranties($criticalCSS);
+
+@include WPCoMa_ControllerBrowser($criticalCSS);
+@include WPCoMa_ControllerBrowserController($criticalCSS);
+
+@include WPCoMa_Message($criticalCSS);
+@include WPCoMa_EditableProperty($criticalCSS);
+
+@include WPCoMa_ComponentSelect($criticalCSS);
+@include WPCoMa_ComponentEdit($criticalCSS);
+
+.partial[data-partial^="coma/"], .partial[data-partial^="coma/"] * {
+
+  outline: none;
+  &:focus {
+    box-shadow: none;
+  }
+
+}

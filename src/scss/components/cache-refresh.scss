@@ -1,0 +1,92 @@
+@mixin WPCoMa_CacheRefresh($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/cache-refresh"] {
+
+      .progress {
+        position: relative;
+        margin: 0 10px;
+        height: 32px;
+
+        background: $color-cache-refresh-progress-background-color;
+        > div {
+          position: absolute;
+          width: 0%;
+          height: 100%;
+
+          overflow: hidden;
+
+          background: $color-cache-refresh-progress-bar-background-color;
+
+          &:after {
+            content: attr(data-progress);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            line-height: 32px;
+            color: $color-white;
+            text-align: center;
+
+          }
+        }
+
+      }
+
+      .buttons {
+        margin: 20px 0;
+
+      }
+
+      .results {
+        margin: 20px 0;
+
+        li {
+          padding-top: 5px;
+
+          &:before {
+
+            @include font-dashicons();
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+
+          }
+
+          &:before {
+
+            font-size: 25px;
+            line-height: 11px;
+            height: 13px;
+            text-align: center;
+            width: 30px;
+          }
+          &.coma-loading {
+
+            &:before {
+
+              content: "\f130";
+              font-size: 18px;
+            }
+
+          }
+          &.coma-loaded {
+
+            &:before {
+
+              content: "\f147";
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

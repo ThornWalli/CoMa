@@ -1,0 +1,30 @@
+@mixin WPCoMa_ComponentEdit($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/component-edit"] {
+
+      .partial[data-partial="coma/component/tab-container"] {
+
+        > section {
+
+          > article {
+
+            .partial[data-partial="coma/assetboard/property-dialog/field-row"] {
+
+              //margin-bottom: 10px;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+

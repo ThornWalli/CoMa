@@ -1,0 +1,103 @@
+@mixin WPCoMa_TabContainer($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/tab-container"] {
+
+      margin: 0 10px;
+
+      box-sizing: border-box;
+
+      border: solid $color-tab-container-border-color 1px;
+      border-top-width: 0;
+      border-bottom-width: 0;
+
+      > ul {
+
+        @include clearfix();
+        
+        margin: 0;
+
+        li {
+
+          float: left;
+          margin: 0;
+
+          font-size: 16px;
+          padding: 10px 15px;
+
+          @media (min-width: $media-wp-desktop-min) {
+            font-size: 13px;
+            padding: 5px 10px;
+          }
+
+          background: $color-tab-container-tab-background-color;
+
+          position: relative;
+
+          border: solid $color-tab-container-tab-border-color 1px;
+          border-bottom-width: 0;
+          border-left-width: 1px;
+          &:first-child {
+            border-top-width: 0;
+            border-left-width: 0;
+          }
+
+          a {
+            &:hover, &:focus {
+              box-shadow: none;
+            }
+            color: $color-tab-container-tab-label-color;
+            text-decoration: none;
+          }
+
+          &.active {
+            display: block;
+            background-color: $color-tab-container-background-color;
+            a {
+              color: $color-tab-container-tab-selected-label-color;
+            }
+
+            &:after {
+              position: absolute;
+              bottom: -2px;
+              width: 100%;
+              height: 2px;
+              left: 0;
+              content: "";
+              background-color: $color-tab-container-background-color;
+            }
+
+          }
+
+        }
+
+      }
+
+      > section {
+
+        article {
+
+          border: solid $color-tab-container-border-color 1px;
+          border-left-width: 0;
+          border-right-width: 0;
+
+          box-sizing: border-box;
+
+          display: none;
+
+          padding: 5px;
+
+          &.active {
+            display: block;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

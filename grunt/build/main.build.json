@@ -1,0 +1,53 @@
+{
+  "baseUrl": "../src/js",
+  "include": [
+
+    "requirejs",
+    "libs",
+    "codemirror",
+
+    "packages"
+  ],
+  "out": "../js/main.js",
+  "paths": {
+    "requirejs": "../../grunt/node_modules/requirejs/require",
+    "libs": "../../js/libs",
+    "codemirror": "../../js/codemirror"
+  },
+  "namespace": "coma",
+  "keepBuildDir": false,
+  "optimize": "uglify2",
+  "skipDirOptimize": false,
+  "closure": {
+    "CompilerOptions": {
+      "removeDeadCode": true,
+      "removeUnusedLocalVars": true,
+      "removeUnusedVars": true
+    },
+    "CompilationLevel": "SIMPLE_OPTIMIZATIONS",
+    "loggingLevel": "WARNING"
+  },
+  "uglify2": {
+    "output": {
+      "beautify": false
+    },
+    "compress": {
+      "dead_code": true,
+      "drop_debugger": true,
+      "loops": true,
+      "unused": true,
+      "hoist_funs": true,
+      "hoist_vars": true,
+      "if_return": true,
+      "join_vars": true,
+      "drop_console": true,
+      "sequences": true
+    },
+    "warnings": true,
+    "mangle": true
+  },
+  "generateSourceMaps": false,
+  "removeCombined": false,
+  "preserveLicenseComments": false,
+  "logLevel": 0
+}

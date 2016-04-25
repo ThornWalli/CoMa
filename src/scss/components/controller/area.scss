@@ -1,0 +1,96 @@
+@mixin WPCoMa_ControllerArea($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/controller/area"] {
+
+      ul {
+
+        li {
+
+        }
+      }
+
+      > .helper {
+
+        &:after {
+          display: inline-block;
+          content: "[ " attr(data-position) " ] - [ " attr(data-template-name) " ]";
+
+        }
+      }
+
+      > .content {
+
+        @include clearfix();
+
+      }
+
+      > .append {
+
+
+        display: none;
+        margin: 10px 5px;
+        border-radius: 3px;
+
+        background: rgba(255, 255, 255, 0.8);
+        opacity: 0.4;
+
+        transition: opacity .35s ease;
+
+        > span {
+
+          display: block;
+          cursor: pointer;
+
+          @include font-open-sans();
+
+          padding: 10px;
+          box-sizing: border-box;
+
+          border-radius: 3px;
+          border: dashed #AAAAAA 2px;
+
+
+          text-align: center;
+          color: #333333;
+          font-weight: bold;
+
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      &.coma-show {
+
+        > .append {
+
+          display: block;
+
+        }
+
+      }
+
+      &[data-partial-alignment="vertical"] {
+
+        > .content {
+          > * {
+
+          }
+        }
+      }
+      &[data-partial-alignment="horizontal"] {
+        > .content {
+          > [data-partial="coma/component/controller/component"] {
+            float: left;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}

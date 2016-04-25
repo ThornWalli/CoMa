@@ -1,0 +1,111 @@
+@import "common/vars.scss";
+
+.coma-debug.coma-debug-show-elements:not(.coma-edit-mode) {
+
+  section, article, h1, h2, h3, h4, h5, h6, header, footer, nav, aside, p {
+    position: relative;
+    border: dotted transparent 1px;
+    &:before {
+      display: inline-block;
+      @include font-open-sans();
+      font-size: 11px;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #000;
+      padding: 2px 4px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+  }
+
+  a {
+    outline: dotted magenta 1px;
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      border-color: lightseagreen;
+      &:before {
+        left: auto;
+        right: 0;
+        content: "h#{$i}" !important;
+        background-color: lightseagreen;
+        color: #ffffff;
+      }
+    }
+  }
+
+  section {
+    border-color: lightsalmon;
+    &:before {
+      content: 'Section' !important;;
+      background: lightsalmon;
+      transform: translate(-100%, -100%);
+    }
+  }
+
+  article {
+    border-color: lightblue;
+    &:before {
+      content: 'Article' !important;
+      background: lightblue;
+      transform: translate(0, -100%);
+    }
+  }
+
+  header {
+    border-color: lightcoral;
+    &:before {
+      content: 'Header' !important;
+      background: lightcoral;
+    }
+  }
+
+  footer {
+    border-color: lightcoral;
+    &:before {
+      content: 'Footer' !important;
+      background: lightcoral;
+    }
+  }
+
+  nav {
+    border-color: lightseagreen;
+    &:before {
+      left: auto;
+      right: 0;
+      transform: translate(100%, 0);
+      top: auto;
+      bottom: 0;
+      content: 'Nav' !important;
+      background: lightseagreen;
+      color: #ffffff;
+    }
+  }
+  p {
+    border-color: orangered;
+    &:before {
+      left: auto;
+      right: 0;
+      transform: translate(0, 100%);
+      top: auto;
+      bottom: 0;
+      content: 'P' !important;
+      background: orangered;
+      color: #ffffff;
+    }
+  }
+  aside {
+    border-color: limegreen;
+    &:before {
+      left: auto;
+      right: 0;
+      transform: translate(100%, 0);
+      content: 'aside' !important;
+      background: limegreen;
+    }
+  }
+
+}

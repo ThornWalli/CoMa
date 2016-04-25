@@ -1,0 +1,214 @@
+@mixin WPCoMa_PropertyDialogFieldRow($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/assetboard/property-dialog/field-row"] {
+
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+
+      label {
+
+        padding: 10px 5px;
+        margin: 0;
+
+        &:after {
+          content: ":";
+          display: inline-block;
+        }
+
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+
+        vertical-align: baseline;
+
+      }
+
+      input + label {
+        &:after {
+          content: none;
+        }
+      }
+
+      > p {
+
+        &.description {
+          margin: 0;
+          padding: 0;
+          font-size: 12px;
+          font-style: italic;
+        }
+
+      }
+
+      @media screen and (max-width: $media-wp-tablet-max) {
+
+        [data-partial="coma/component/field"], [data-partial^="coma/component/field/"] {
+          width: 100%;
+        }
+
+        text-align: center;
+
+        padding: 0 5px;
+
+        label {
+          text-align: center;
+
+          font-size: 16px;
+
+          padding: 10px 0px;
+          padding-top: 0;
+          margin-bottom: 10px;
+
+          &:after {
+            display: none;
+          }
+        }
+
+        > * {
+          text-align: initial;
+        }
+
+        label, p {
+          display: block;
+          width: 100%;
+          //text-align: left;
+        }
+
+        textarea, select, input[type="text"], input[type="email"], input[type="number"] {
+          display: block;
+          width: 100%;
+          margin: 0;
+          margin-bottom: 10px;
+          &:last-child {
+            margin-bottom: 0px;
+          }
+        }
+
+        > p {
+
+          &.description {
+            padding-top: 10px;
+          }
+
+        }
+
+      }
+
+      @media screen and (min-width: $media-wp-desktop-min) {
+
+        label {
+          display: inline-block;
+          width: 300px;
+        }
+
+        select[size] {
+
+          margin: 5px 0;
+
+        }
+
+        input[type='text'] {
+
+          display: inline-block;
+
+        }
+
+        > input[type="text"] {
+          width: 25em;
+        }
+
+        > textarea, > select[size] {
+          width: 25em;
+          vertical-align: top;
+        }
+
+        > p {
+
+          &.description {
+            padding: 0 5px;
+          }
+
+        }
+      }
+
+      &.select-wrapper {
+
+        padding: 0 10px;
+
+        border: solid #EEEEEE;
+        border-width: 1px 0 1px 0;
+
+        text-align: left;
+
+        margin-bottom: 0;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+        &:first-child {
+          border-top: 0;
+        }
+
+        @media screen and (max-width: $media-wp-tablet-max) {
+          label {
+            width: auto;
+            display: inline-block;
+          }
+
+          input[type="radio"] {
+
+            margin: 10px;
+            display: inline-block;
+          }
+        }
+
+        transition: border-color 0.35s ease;
+
+        &:hover {
+
+          background-color: #EEEEEE;
+          border-color: #cccccc;
+
+        }
+      }
+
+      .icon {
+
+        display: inline-block;
+        width: auto;
+        height: auto;
+        text-align: center;
+
+        cursor: pointer;
+
+        color: $color-wp-link-default-color;
+        &:hover {
+          color: $color-wp-link-default-hover-color;
+        }
+
+        color: $color-wp-link-default-color;
+        &:hover {
+          color: $color-wp-link-default-hover-color;
+        }
+        &:before {
+          font-size: 24px;
+          line-height: 28px;
+        }
+        @media screen and (max-width: $media-wp-tablet-max) {
+          &:before {
+            font-size: 36px;
+            line-height: 36px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,50 @@
+@mixin WPCoMa_FieldLinkSelect($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/field/link-select"] {
+
+      .input {
+
+        &.external, &.internal {
+        }
+
+        select, input {
+          width: 100%;
+        }
+
+      }
+
+      > select {
+
+      }
+
+      @media screen and (max-width: $media-wp-tablet-max) {
+        > select {
+          margin-top: 5px;
+        }
+      }
+
+      @media screen and (min-width: $media-wp-desktop-min) {
+
+        display: inline;
+        vertical-align: top;
+
+        .input {
+          display: inline-block;
+          width: 40%;
+        }
+
+        > select {
+          width: 8%;
+          &.link-target {
+            width: 16.8%;
+          }
+        }
+
+      }
+    }
+
+  }
+
+}

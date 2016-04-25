@@ -1,0 +1,47 @@
+@import "common/vars.scss";
+
+body.coma-edit-mode {
+}
+
+#wpadminbar {
+
+  #wp-admin-bar-coma-mode-toggle-secondary {
+
+    @media (min-width: $media-wp-desktop-min) {
+      display: none;
+    }
+
+  }
+
+  #wp-admin-bar-coma-mode-toggle {
+
+    display: block;
+
+    > a {
+
+      .ab-icon {
+
+        &:before {
+          content: '\f530' !important;
+          top: 2px;
+
+          .coma-edit-mode & {
+            content: '\f177' !important;
+          }
+
+        }
+      }
+
+      .ab-label {
+
+        span {
+          color: $color-wp-link-default-color;
+          font-style: italic;
+        }
+
+      }
+
+    }
+  }
+
+}

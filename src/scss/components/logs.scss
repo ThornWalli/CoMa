@@ -1,0 +1,33 @@
+@mixin WPCoMa_Logs($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="wp-content-manage/logs"] {
+
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      right: 0;
+
+      z-index: 100001;
+
+      background-color: $color-logs-background-color;
+
+      > div {
+
+        > :first-child {
+          margin-top: 15px;
+        }
+
+        > :last-child {
+          margin-bottom: 15px;
+        }
+
+      }
+
+    }
+
+  }
+
+}

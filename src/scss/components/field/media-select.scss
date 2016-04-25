@@ -1,0 +1,91 @@
+@mixin WPCoMa_FieldMediaSelect($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/field/media-select"] {
+
+      @include clearfix();
+
+      input {
+        &[type="text"] {
+
+          background: $color-white;
+
+        }
+
+      }
+
+      .preview {
+
+        float: none;
+
+        padding-top: 10px;
+
+        img {
+          display: inline-block;
+          width: auto;
+        }
+
+      }
+      .buttons {
+        text-align: center;
+
+      }
+
+      @media (max-width: $media-wp-tablet-max) {
+
+        .input {
+
+          [type="button"] {
+            margin: 10px 5px;
+            margin-bottom: 0px;
+          }
+
+        }
+
+        .preview {
+          padding-top: 10px;
+        }
+
+      }
+
+      @media (min-width: $media-wp-desktop-min) {
+
+        display: inline-block;
+
+        .input {
+          display: inline-block;
+          padding-top: 10px;
+
+          input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+          }
+        }
+        .buttons {
+
+          margin-top: 10px;
+
+        }
+
+        .preview {
+
+          float: right;
+
+          display: inline-block;
+          padding: 10px;
+          img {
+            box-sizing: border-box;
+            height: 70px;
+          }
+          vertical-align: middle;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

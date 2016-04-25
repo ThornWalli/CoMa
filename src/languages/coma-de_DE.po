@@ -1,0 +1,293 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Content-Manager-1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-27 13:09+0100\n"
+"PO-Revision-Date: 2015-09-10 23:03+0200\n"
+"Language-Team: Thorn-Welf Walli <wp-cm@lammpee.com>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.4\n"
+"Last-Translator: \n"
+"X-Poedit-SearchPath-0: ..\n"
+
+msgid "content-manager"
+msgstr "Content-Manager"
+
+msgid "coma"
+msgstr "CoMa"
+
+msgid "Cache"
+msgstr "Zwischenspeicher"
+
+msgid "Refresh Thumbnails"
+msgstr "Bilder aktualisieren"
+
+msgid "Warranties"
+msgstr "Berechtigungen"
+
+msgid "Roles"
+msgstr "Rollen"
+
+msgid "Role"
+msgstr "Rolle"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "All Roles"
+msgstr "Alle Rollen"
+
+msgid "Content-Manager Roles"
+msgstr "Content-Manager Rollen"
+
+msgid "Controller-Browser"
+msgstr "Controller-Browser"
+
+msgid "properties delete?"
+msgstr "Eigenschaften löschen?"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Preview"
+msgstr "Vorschau"
+
+msgid "Administrator"
+msgstr "Administrator"
+
+msgid "Editor"
+msgstr "Redakteur"
+
+msgid "Contributor"
+msgstr "Mitarbeiter"
+
+msgid "Subscriber"
+msgstr "Abonnent"
+
+msgid "Area"
+msgstr "Bereich"
+
+msgid "Area delete?"
+msgstr "Bereiech löschen?"
+
+msgid "Activate Area?"
+msgstr "Bereiech aktivieren?"
+
+msgid "Deactivate Area?"
+msgstr "Bereiech deaktvieren?"
+
+msgid "Component"
+msgstr "Komponent"
+
+msgid "Move Component?"
+msgstr "Komponente verschieben?"
+
+msgid "Delete Component?"
+msgstr "Komponente löschen?"
+
+msgid "Activate Component?"
+msgstr "Komponente aktivieren?"
+
+msgid "Deactivate Component?"
+msgstr "Komponente deaktvieren?"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Append"
+msgstr "Hinzufügen"
+
+msgid "Select"
+msgstr "Auswählen"
+
+msgid "Remove"
+msgstr "Entfernen"
+
+msgid "Copy"
+msgstr "Kopieren"
+
+msgid "Move"
+msgstr "Verschieben"
+
+msgid "Component Select"
+msgstr "Komponente auswählen"
+
+msgid "Edit Component"
+msgstr "Komponente bearbeiten"
+
+msgid "Add Component"
+msgstr "Komponente hinzufügen"
+
+msgid "Page"
+msgstr "Seite"
+
+msgid "Pages"
+msgstr "Seiten"
+
+msgid "Post"
+msgstr "Beitrag"
+
+msgid "Posts"
+msgstr "Beiträge"
+
+msgid "Error"
+msgstr "Fehler"
+
+msgid "Static"
+msgstr "Statisch"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Here, something went wrong ..."
+msgstr "Hier ging etwas schief..."
+
+msgid "Show Posts:"
+msgstr "Beiträge anzeigen:"
+
+msgid "Page Properties"
+msgstr "Seiten Eigenschaften"
+
+msgid "Global Properties"
+msgstr "Globale Eigenschaften"
+
+msgid "No post"
+msgstr "Kein Beitrag"
+
+msgid "Author mode"
+msgstr "Autoren-Ansicht"
+
+msgid "Preview mode"
+msgstr "Vorschau-Ansicht"
+
+msgid "Save pages/posts html-markup by first load as flat file for other requests."
+msgstr "Speichert von Seiten/Beiträgen das HTMl-Markup ab, und gibt dieses beim aufruf zurück."
+
+msgid "Pages/Posts Cache"
+msgstr "Seiten/Beiträge Zwischenspeicher"
+
+msgid "Pages-Cache activate?"
+msgstr "Seiten-Zwischenspeicher aktivieren?"
+
+msgid "Posts-Cache activate?"
+msgstr "Beiträge-Zwischenspeicher aktivieren?"
+
+msgid "WP Post-Revision?"
+msgstr "WP Post-Revision?"
+
+msgid "Enables Pages/Post Revisions-Tool from WordPress, for areas and components."
+msgstr "Aktiviert das Seiten/Beitrag Revision-Tool von Wordpress für Bereiche und Komponenten."
+
+msgid "Controllers have been deleted."
+msgstr "Controller wurden gelöscht."
+
+msgid "Allowed deleting all Controllers."
+msgstr "Das löschen der gesamten Controller erlauben."
+
+msgid "Delete Controllers"
+msgstr "Controller löschen"
+
+msgid "Deleted Pages/Posts Cache"
+msgstr "Seiten/Beiträge Zwischenspeicher wurde gelöscht."
+
+msgid "Allowed deleting Pages/Posts Cache."
+msgstr "Das löschen der gesamten Seiten/Beiträge Zwischenspeicher erlauben."
+
+msgid "Delete Pages/Posts Cache"
+msgstr "Seiten/Beiträge Zwischenspeicher löschen"
+
+msgid "Deleted Pages/Posts Cache"
+msgstr "Seiten/Beträge Zwischenspeicher gelöscht."
+
+msgid "Deleting need to be accepted."
+msgstr "Das Löschen muss erst akzeptiert werden."
+
+msgid "Is cached"
+msgstr "Zwischengespeichert"
+
+msgid "Not cached"
+msgstr "Nicht zwischengespeichert"
+
+msgid "Link-Title"
+msgstr "Link-Titel"
+
+msgid "New Window/Tab"
+msgstr "Neues Fenster/Tab"
+
+msgid "Parent Window/Tab"
+msgstr "Eltern Fenster/Tab"
+
+msgid "Current Window/Tab"
+msgstr "Aktuelles Fenster/Tab"
+
+msgid "Top Window/Tab"
+msgstr "Oberstes Fenster/Tab"
+
+msgid "Disable"
+msgstr "Deaktiviert"
+
+msgid "Activate"
+msgstr "Aktivieren"
+
+msgid "Activated"
+msgstr "Aktiviert"
+
+msgid "Deactivate"
+msgstr "Deaktivieren"
+
+msgid "Deactivated"
+msgstr "Deaktiviert"
+
+msgid "Image Quality?"
+msgstr "Bild Qualität?"
+
+msgid "Cache Reset"
+msgstr "Zwischenspeicher zurücksetzen"
+
+msgid "Cache-Path:"
+msgstr "Zwischenspeicher-Pfad:"
+
+msgid "Path to save cached pages as file."
+msgstr "Pfad zum speichern der zwischengespeicherten Seiten als Datei."
+
+msgid "DEFAULT: Wordpress-Root"
+msgstr "DEFAULT: Wordpress-Hauptverzeichnis"
+
+msgid "%PLUGIN_PATH%: Plugin-Path"
+msgstr "%PLUGIN_PATH%: Plugin-Pfad"
+
+msgid "%THEME_PATH%: Theme-Path"
+msgstr "%THEME_PATH%: Theme-Pfad"
+
+msgid "Mode?"
+msgstr "Modus?"
+
+msgid "Max. %d component(s)"
+msgstr "Max. %d Komponente(n)"
+
+msgid "Use Post-Revision from Wordpress?"
+msgstr "Beitrags-Revision von Wordpress verwenden?"
+
+msgid "<code>Warning: Experimentally, not tested</code> <br />Enables Pages/Post Revisions-Tool from WordPress, for areas and components."
+msgstr "<code>Warnung: Experimentel, nicht getestet.</code> <br />Aktiviert die Seiten/Beitrag Revisions-Funktion von Wordpress, für Bereiche und Komponenten. <br>Wiederherstellt beim zurücksetzen auf eine ältere Revision, alle zu diesem Zeitpunkt vorhandenen Bereiche und Komponenten. <br /><code>Löscht alle aktuellen.</code> <br /><code>Hinweis: Es werden keine Revisionen beim Erstellen/Bearbeiten einer Komponente erzeugt.</code>"
+
+msgid "Editor-Mode"
+msgstr "Editor-Modus"
+
+msgid "Add Field"
+msgstr "Feld hinzufügen"
+
+
+

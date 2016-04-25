@@ -1,0 +1,64 @@
+@mixin WPCoMa_FieldMultipleValues($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/field/multiple-values"] {
+
+      .fields {
+        @include clearfix();
+
+        .remove {
+          float: left;
+          width: 10%;
+        }
+
+        > div {
+
+          width: 90%;
+          float: left;
+          @include clearfix();
+
+          > div {
+
+            padding: 0 5px;
+            box-sizing: border-box;
+            float: left;
+
+            .partial[data-partial="coma/assetboard/property-dialog/field-row"] {
+
+              > * {
+                width: 100%;
+              }
+
+            }
+
+          }
+
+        }
+      }
+
+      @media screen and (max-width: $media-wp-tablet-max) {
+
+        .fields {
+
+          > div {
+            > div {
+              width: 100% !important;
+              margin-bottom: 10px;
+
+            }
+          }
+
+        }
+
+      }
+
+      .add-field {
+        display: block;
+        margin: 5px auto;
+      }
+    }
+
+  }
+
+}

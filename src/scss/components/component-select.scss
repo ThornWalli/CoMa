@@ -1,0 +1,33 @@
+@mixin WPCoMa_ComponentSelect($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/component-select"] {
+
+      //padding: 20px;
+
+      .partial[data-partial="coma/component/tab-container"] {
+
+        > section {
+
+          > article {
+
+            padding: 0;
+
+            .partial[data-partial="coma/assetboard/property-dialog/field-row"] {
+
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+

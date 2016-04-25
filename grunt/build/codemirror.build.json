@@ -1,0 +1,64 @@
+{
+  "baseUrl": "./node_modules/codemirror",
+  "include": [
+    "cm/lib/codemirror",
+    "cm/mode/clike/clike",
+    "cm/mode/xml/xml",
+    "cm/mode/css/css",
+    "cm/mode/htmlmixed/htmlmixed",
+    "cm/mode/javascript/javascript",
+    "cm/mode/php/php",
+    "cm/mode/sql/sql"
+  ],
+  "out": "../js/codemirror.js",
+  "namespace": "coma",
+  "paths": {
+    "cm/lib/codemirror": "lib/codemirror",
+    "cm/mode/clike/clike":"mode/clike/clike",
+    "cm/mode/xml/xml":"mode/xml/xml",
+    "cm/mode/css/css":"mode/css/css",
+    "cm/mode/htmlmixed/htmlmixed":"mode/htmlmixed/htmlmixed",
+    "cm/mode/javascript/javascript":"mode/javascript/javascript",
+    "cm/mode/php/php":"mode/php/php",
+    "cm/mode/sql/sql":"mode/sql/sql"
+  },
+  "wrap": {
+    "startFile": "parts/start.frag",
+    "endFile": "parts/end.frag"
+  },
+  "keepBuildDir": false,
+  "optimize": "none",
+  "skipDirOptimize": false,
+  "closure": {
+    "CompilerOptions": {
+      "removeDeadCode": true,
+      "removeUnusedLocalVars": true,
+      "removeUnusedVars": true
+    },
+    "CompilationLevel": "SIMPLE_OPTIMIZATIONS",
+    "loggingLevel": "WARNING"
+  },
+  "uglify2": {
+    "output": {
+      "beautify": false
+    },
+    "compress": {
+      "dead_code": true,
+      "drop_debugger": true,
+      "loops": true,
+      "unused": true,
+      "hoist_funs": true,
+      "hoist_vars": true,
+      "if_return": true,
+      "join_vars": true,
+      "drop_console": true,
+      "sequences": true
+    },
+    "warnings": true,
+    "mangle": true
+  },
+  "generateSourceMaps": false,
+  "removeCombined": false,
+  "preserveLicenseComments": false,
+  "logLevel": 0
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Content-Manager",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^6.2.0",
+    "codemirror": "^5.11.0",
+    "es6-promise-polyfill": "^1.2.0",
+    "fs-extra": "^0.24.0",
+    "gettext-parser": "^1.1.1",
+    "glob": "~4.0.4",
+    "grunt": "^0.4.0",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-postcss": "^0.7.1",
+    "historyjs": "^1.8.0-b2",
+    "jquery": "^2.2.0",
+    "livereload-js": "^2.2.2",
+    "replace": "^0.3.0",
+    "underscore": "^1.8.3"
+  }
+}

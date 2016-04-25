@@ -1,0 +1,8 @@
+.DS_Store
+
+/.idea
+/resources/bower/
+/grunt/node_modules
+/grunt/.sass-cache
+/cache
+!/cache/.keep

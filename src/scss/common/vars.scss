@@ -1,0 +1,79 @@
+$criticalCSS: false;
+
+$prefix: coma;
+
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-tab-container-tab-label-color: #555555;
+$color-tab-container-background-color: #FFFFFF;
+$color-tab-container-border-color: #cccccc;
+$color-tab-container-tab-background-color: #ebebeb;
+$color-tab-container-tab-border-color: #e5e5e5;
+$color-tab-container-tab-selected-label-color: #777777;
+
+$color-modal-background-color: rgba(0, 0, 0, 0.5);
+
+@mixin font-open-sans() {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+@mixin font-dashicons() {
+  font-family: 'dashicons', sans-serif;
+}
+
+$dashicons-no : "\f158";
+$dashicons-admin-generic: '\f111';
+$dashicons-editor-expand:'\f211';
+$dashicons-editor-contract:'\f506';
+
+$screen-xs: 480px;
+$screen-xs-min: $screen-xs;
+$screen-phone: $screen-xs-min;
+
+$screen-sm: 768px;
+$screen-sm-min: $screen-sm;
+$screen-tablet: $screen-sm-min;
+
+$screen-md: 992px;
+$screen-md-min: $screen-md;
+$screen-desktop: $screen-md-min;
+
+$screen-lg: 1200px;
+$screen-lg-min: $screen-lg;
+$screen-lg-desktop: $screen-lg-min;
+
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+
+@import "../../../../../../wp-admin/css/colors/_variables.scss";
+
+$color-wp-bar-background-color: $base-color;
+$color-wp-bar-hover-background-color: #32373c;
+$color-wp-link-default-color: #a0a5aa;
+$color-wp-link-default-hover-color: $highlight-color;
+$color-wp-text-default-color: #a0a5aa;
+$color-wp-text-header-color: #ffffff;
+$color-wp-default-background-color: #ffffff;
+
+$color-property-dialog-border-color: #cccccc;
+$color-property-dialog-background-color: #eeeeee;
+
+$color-logs-background-color: #eeeeee;
+
+$color-controller-browser-border-color: #cccccc;
+$color-controller-browser-controller-open-background-color: #DDDDDD;
+$color-controller-browser-controller-property-color: #32373c;
+$color-controller-browser-controller-property-background-color: #f1f1f1;
+$color-controller-browser-controller-property-border-color: #cccccc;
+$color-controller-browser-controller-property-hover-background-color: rgba(0, 0, 0, .1);
+$color-controller-browser-controller-properties-background-color: #f1f1f1;
+
+$color-cache-refresh-progress-background-color: #cccccc;
+$color-cache-refresh-progress-bar-background-color: #32373c;
+
+$color-controller-header-shadow: rgba(0, 0, 0, 0.2);
+$color-controller-link-default-color: #a0a5aa;
+
+$media-wp-tablet-max : 782px;
+$media-wp-desktop-min : ($media-wp-tablet-max + 1px);

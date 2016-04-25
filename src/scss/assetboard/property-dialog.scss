@@ -1,0 +1,108 @@
+@mixin WPCoMa_PropertyDialog($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/assetboard/property-dialog"] {
+
+      position: absolute;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+
+      font-family: 'Open Sans', sans-serif;
+
+      @import url('../../../../../../wp-admin/css/common.css');
+      @import url('../../../../../../wp-admin/css/forms.css');
+      //@import (less) url('../../../../../wp-admin/css/admin-menu.css');
+      //@import (less) url('../../../../../wp-admin/css/dashboard.css');
+      //@import (less) url('../../../../../wp-admin/css/list-tables.css');
+      //@import (less) url('../../../../../wp-admin/css/edit.css');
+      //@import (less) url('../../../../../wp-admin/css/revisions.css');
+      //@import (less) url('../../../../../wp-admin/css/media.css');
+      //@import (less) url('../../../../../wp-admin/css/themes.css');
+      //@import (less) url('../../../../../wp-admin/css/about.css');
+      //@import (less) url('../../../../../wp-admin/css/nav-menus.css');
+      //@import (less) url('../../../../../wp-admin/css/widgets.css');
+      //@import (less) url('../../../../../wp-admin/css/l10n.css');
+
+      >.buttons {
+
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        box-sizing: border-box;
+        border: solid $color-property-dialog-border-color 1px;
+        background: $color-property-dialog-background-color;
+        line-height: 48px;
+        padding: 5px 10px;
+        text-align: right;
+
+        .partial[data-partial="coma/assetboard/property-dialog/field-row"] {
+
+          > * {
+            display: inline-block;
+            vertical-align: inherit;
+          }
+
+        }
+
+      }
+
+      .partial[data-partial="coma/component/tab-container"] {
+
+        overflow-y: scroll;
+
+        margin: 0;
+        width: 100%;
+
+        position: absolute;
+        top: 0px;
+        bottom: 60px;
+
+        background: $color-white;
+        > ul {
+
+          li {
+
+            border-top-width: 0;
+
+          }
+        }
+
+        section {
+          article {
+
+            border-bottom-width: 0;
+
+          }
+        }
+      }
+
+      .partial[data-partial="coma/component/modal/property-dialog"] & {
+
+        h2 {
+          margin: 0;
+          font-size: 20px;
+          line-height: 40px;
+          padding: 0 10px;
+        }
+
+        .partial[data-partial="coma/component/tab-container"] {
+
+          background: $color-white;
+
+          margin: 0;
+
+        }
+
+        .buttons {
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

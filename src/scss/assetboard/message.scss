@@ -1,0 +1,46 @@
+@mixin WPCoMa_Message($critical) {
+
+  @if $critical == false {
+
+    $color-message-info-background-color: #BDE5F8;
+    $color-message-info-color: #00529B;
+
+    $color-message-success-background-color: #DFF2BF;
+    $color-message-success-color: #4F8A10;
+
+    $color-message-warning-background-color: #FEEFB3;
+    $color-message-warning-color: #9F6000;
+
+    $color-message-error-background-color: #FFBABA;
+    $color-message-error-color: #D8000C;
+
+    .partial[data-partial="coma/assetboard/message"] {
+
+      border: 1px solid;
+      margin: 0;
+      padding: 0 10px;
+      background-repeat: no-repeat;
+      background-position: 10px center;
+
+      &.info {
+        color: $color-message-info-color;
+        background-color: $color-message-info-background-color;
+      }
+      &.success {
+        color: $color-message-success-color;
+        background-color: $color-message-success-background-color;
+      }
+      &.warning {
+        color: $color-message-warning-color;
+        background-color: $color-message-warning-background-color;
+      }
+      &.error {
+        color: $color-message-error-color;
+        background-color: $color-message-error-background-color;
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,56 @@
+{
+  "baseUrl": "./",
+  "include": [
+    "es6-promise-polyfill",
+    "jquery-master",
+    "underscore-master",
+    "native-history"
+  ],
+  "out": "../js/libs.js",
+  "namespace": "coma",
+  "paths": {
+    "es6-promise-polyfill": "node_modules/es6-promise-polyfill/promise",
+    "jquery-master": "node_modules/jquery/dist/jquery",
+    "underscore-master": "node_modules/underscore/underscore",
+    "native-history": "../resources/modified_sources/historyjs/scripts/bundled-uncompressed/html4html5/native.history"
+  },
+  "wrap": {
+    "startFile": "parts/start.frag",
+    "endFile": "parts/end.frag"
+  },
+  "keepBuildDir": false,
+  "optimize": "none",
+  "skipDirOptimize": false,
+  "closure": {
+    "CompilerOptions": {
+      "removeDeadCode": true,
+      "removeUnusedLocalVars": true,
+      "removeUnusedVars": true
+    },
+    "CompilationLevel": "SIMPLE_OPTIMIZATIONS",
+    "loggingLevel": "WARNING"
+  },
+  "uglify2": {
+    "output": {
+      "beautify": false
+    },
+    "compress": {
+      "dead_code": true,
+      "drop_debugger": true,
+      "loops": true,
+      "unused": true,
+      "hoist_funs": true,
+      "hoist_vars": true,
+      "if_return": true,
+      "join_vars": true,
+      "drop_console": true,
+      "sequences": true
+    },
+    "warnings": true,
+    "mangle": true
+  },
+  "generateSourceMaps": false,
+  "removeCombined": false,
+  "preserveLicenseComments": false,
+  "logLevel": 0
+}

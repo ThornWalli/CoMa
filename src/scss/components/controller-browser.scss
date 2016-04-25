@@ -1,0 +1,60 @@
+@mixin WPCoMa_ControllerBrowser($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/controller-browser"] {
+
+      margin: 20px 0;
+
+      padding-right: 20px;
+      > form {
+        > .controls {
+          @include clearfix();
+
+          position: relative;
+          padding-left: 9px;
+          //border: solid #CCCCCC;
+          //border-width: 1px 1px 0 1px;
+
+          > *, > .type > * {
+            display: inline-block;
+            vertical-align: middle;
+
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+          select, input:not([type='checkbox']) {
+            width: auto;
+          }
+
+          input[type="checkbox"] {
+            margin-top: 0;
+
+          }
+
+          > .type {
+
+            float: right;
+            [name="toggleType"] {
+
+            }
+
+          }
+
+        }
+      }
+      > .controllers {
+
+        margin-top: 10px;
+
+        border: solid $color-controller-browser-border-color;
+        border-width: 0 1px 1px 1px;
+
+      }
+
+    }
+
+  }
+
+}

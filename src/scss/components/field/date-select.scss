@@ -1,0 +1,19 @@
+@mixin WPCoMa_FieldDateSelect($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial="coma/component/field/date-select"] {
+
+      display: inline-block;
+
+      @media screen and (max-width: $media-wp-tablet-max) {
+
+        text-align: center;
+
+      }
+
+    }
+
+  }
+
+}

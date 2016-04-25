@@ -1,0 +1,98 @@
+@mixin WPCoMa_Modal($critical) {
+
+  @if $critical == false {
+
+    .partial[data-partial^="coma/component/modal"] {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      text-align: center;
+      visibility: hidden;
+      z-index: 9999;
+
+      > .content {
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 4%;
+        background-color: $color-modal-background-color;
+        opacity: 0;
+
+        box-sizing: border-box;
+
+        transition-property: opacity;
+        transition-duration: 0.35s;
+        transition-timing-function: ease;
+
+        > section {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          text-align: left;
+          vertical-align: middle;
+          z-index: 10000;
+
+          box-sizing: border-box;
+
+          background-color: #ffffff;
+          background-clip: padding-box;
+          padding: 20px;
+
+          max-width: 1200px;
+
+          > .close {
+            &:before {
+              content: "X";
+              font-family: Helvetica, Arial, sans-serif;
+              font-size: 20px;
+              line-height: 40px;
+              width: 40px;
+              color: white;
+              z-index: 999;
+              display: inline-block;
+              text-align: center;
+            }
+
+            box-sizing: content-box;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+
+          > article > * {
+            width: 100%;
+          }
+        }
+      }
+
+      .partial[data-partial^="coma/component/modal"] {
+        display: none;
+      }
+    }
+
+    body.coma-active-modal {
+      overflow: hidden;
+
+      .partial[data-partial^="coma/component/modal"].active {
+        visibility: visible;
+
+        .content {
+          opacity: 1;
+        }
+
+        .partial[data-partial^="coma/component/modal"] {
+          display: none;
+        }
+      }
+    }
+
+  }
+
+}
