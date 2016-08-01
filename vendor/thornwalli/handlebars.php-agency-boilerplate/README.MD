@@ -2,25 +2,19 @@
 
 Handlebar.php Helper for [agency-boilerplate](https://github.com/StephanGerbeth/agency-boilerplate).
 
-> Use `if_var` for conditions, `if` helper is not compactible with `var` helper.
-
-> ```mustache
-> {{if_var conditional}}
->   true
-> {{else}}
->   false
-> {{/if_var}}
-> ```
-
 ## Options
 
 `\AgencyBoilerplate\Handlebars\Core::init($options)`
 
-```javascript
+```php
 [
   'partialDir' => '.',
   'extension' => '.hbs',
-  'prefix' => ''
+  'prefix' => '',
+  'globalDefTemp' => 'AGENCY_BOILERPLATE_HBS_DEF_TEMP',
+  'globalMixinPath' => 'AGENCY_BOILERPLATE_HBS_MIXIN_PATH',
+  'globalMixinDeactivated' => 'AGENCY_BOILERPLATE_HBS_MIXIN_DEACTIVATED',
+  'defDefaultGroup' => 'default'
 ]
 ```
 
@@ -32,15 +26,38 @@ Sets partial dirs for loading partial via mixin helper.
 
 ### extension
 
-Type: `string`<br>
-Default: `.handlebars`
+Type: `string` | Default: `.handlebars`
 
 ### prefix
 
-Type: `string`<br>
-Default: `empty`
+Type: `string` | Default: `empty`
 
 Sets prefix for template files.
+
+### globalDefTemp
+
+Type: `string` | Default: `AGENCY_BOILERPLATE_HBS_DEF_TEMP` 
+
+Name for global Def-Helper temp variable for call defintions.
+
+### globalMixinPath
+
+Type: `string` | Default: `AGENCY_BOILERPLATE_HBS_MIXIN_PATH` 
+
+Name for global variable, need for rendering mixin.
+
+### globalMixinDeactivated
+
+Type: `string` | Default: `AGENCY_BOILERPLATE_HBS_MIXIN_DEACTIVATED`
+
+Name for global variable to deactivate mixin helper.
+
+### defDefaultGroup
+
+Type: `string` | Default: `default
+
+Sets partial dirs for loading partial via mixin helper.
+
 
 #### Example:
 

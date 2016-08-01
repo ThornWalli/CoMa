@@ -100,7 +100,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate",
-                "reference": "14e6a188360241a5f3bd55ba3c6b79cfd7a2e1f9"
+                "reference": "5159c18cbcd37b06d6ef77a7922c7498ce272513"
             },
             "require": {
                 "justblackbird/handlebars.php-helpers": "~1.0.0",
@@ -126,7 +126,7 @@
                 "issues": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate/issues",
                 "source": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate"
             },
-            "time": "2016-07-31 17:58:22"
+            "time": "2016-08-01 15:36:36"
         },
         {
             "name": "xamin/handlebars.php",

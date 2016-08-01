@@ -6,7 +6,7 @@ namespace AgencyBoilerplate\Handlebars;
 class Core
 {
 
-   const DEF_DEFAULT_GROUP = 'content';
+   const DEF_DEFAULT_GROUP = 'default';
    protected static $instance = null;
    protected static $options = null;
 
