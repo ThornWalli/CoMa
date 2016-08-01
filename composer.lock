@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "73a62c52620eea0339814f0b6098d216",
-    "content-hash": "4086217667c611956e15ebe9c972e525",
+    "hash": "ce1deb400301143c0194b8cdb0852bae",
+    "content-hash": "5e287ffdd534839ddb44cc72698b7f80",
     "packages": [
         {
             "name": "justblackbird/handlebars.php-helpers",
@@ -96,11 +96,11 @@
         },
         {
             "name": "thornwalli/handlebars.php-agency-boilerplate",
-            "version": "dev-feature/helper-if_var",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate",
-                "reference": "7807d2b649e6fba0dacd7bddc40cfd9de0430c6f"
+                "reference": "14e6a188360241a5f3bd55ba3c6b79cfd7a2e1f9"
             },
             "require": {
                 "justblackbird/handlebars.php-helpers": "~1.0.0",
@@ -126,7 +126,7 @@
                 "issues": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate/issues",
                 "source": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate"
             },
-            "time": "2016-06-11 17:41:31"
+            "time": "2016-07-31 17:58:22"
         },
         {
             "name": "xamin/handlebars.php",

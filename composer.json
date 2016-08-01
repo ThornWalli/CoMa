@@ -6,6 +6,6 @@
     }
   ],
   "require": {
-    "thornwalli/handlebars.php-agency-boilerplate": "dev-feature/helper-if_var"
+    "thornwalli/handlebars.php-agency-boilerplate": "dev-master"
   }
 }

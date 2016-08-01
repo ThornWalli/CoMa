@@ -118,7 +118,7 @@ class Template
       if (array_key_exists('globalDefTemp', $options)) {
          $globalDefTemp = $options['globalDefTemp'];
       }
-      require __DIR__ . '/../vendor/autoload.php';
+      require __DIR__ . '/../vendor_/autoload.php';
       \AgencyBoilerplate\Handlebars\Core::init([
          'globalDefTemp' => $globalDefTemp,
          'defDefaultGroup' => $options['defDefaultGroup'],
