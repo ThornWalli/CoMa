@@ -1,0 +1,57 @@
+---
+
+header:
+  small-stage: false
+  headline: "Post headline"
+  subline: "Post subline"
+  image: "//dummyimage.com/992x480/333333/fff"
+
+text: "<p>Nisi necessitatibus voluptatem occaecati quae dicta cupiditate! Phasellus, imperdiet, aliquam eaque fuga?</p>"
+
+date: "00:00 00.00.0000"
+with-link: true
+link:
+  class: "link"
+  url: "#link"
+  title: "More..."
+
+---
+{{{def group="header" name="small-stage" type="CheckBox" title="Size" desc="Large or Small Stage"}}}
+{{{def group="header" name="image" type="ImageSelect" title="Image"}}}
+{{{def group="header" name="header" type="Headline"}}}
+{{{def name="text" type="Editor" title="Text"}}}
+{{{def name="date" type="DateSelect" title="Date"}}}
+{{{def name="with-link" type="CheckBox" title="With Link" desc="Need for used Link"}}}
+{{{def name="link" type="Link" title="Link"}}}
+
+<article class="{{#if small-stage}} small-stage{{/if}}">
+
+  {{#with header}}
+      <header>
+          <img src="{{{image}}}"/>
+        {{#if primary}}
+            <h1 class="headline">{{{headline}}}</h1>
+            <h2 class="subline">{{{subline}}}</h2>
+        {{else}}
+            <h2 class="headline">{{{headline}}}</h2>
+            <h3 class="subline">{{{subline}}}</h3>
+        {{/if}}
+      </header>
+  {{/with}}
+
+  {{{text}}}
+
+    <p class="info">
+      {{#if date}}
+          <span class="date">{{{date}}}</span>
+      {{/if}}
+      {{#if with-link}}
+        {{#with link}}
+            <a href="{{{url}}}"
+               class="{{#if class}}{{class}}{{/if}}"
+               title="{{{title}}}">{{{title}}}</a>
+        {{/with}}
+      {{/if}}
+    </p>
+
+</article>

@@ -1,0 +1,24 @@
+---
+object-1:
+  key: "value"
+object-2:
+  key: "value"
+---
+<h1>lookup example</h1>
+
+<code>{{{stringify this}}}</code>
+
+<h2>lookup: object-1</h2>
+{{#if (lookup object-1 "key")}}
+    <p>key exists</p>
+{{else}}
+    <p>key not found</p>
+{{/if}}
+
+
+<h2>lookup: object-2</h2>
+{{#if (lookup object-2 "key")}}
+    <p>key exists</p>
+{{else}}
+    <p>key not found</p>
+{{/if}}

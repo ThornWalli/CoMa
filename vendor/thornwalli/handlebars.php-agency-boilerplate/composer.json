@@ -1,0 +1,27 @@
+{
+  "name": "thornwalli/handlebars.php-agency-boilerplate",
+  "description": "",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Thorn-Welf Walli",
+      "email": "lammpee@gmail.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate/issues",
+    "source": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate"
+  },
+  "require": {
+    "php": ">=5.3.0",
+    "justblackbird/handlebars.php-helpers": "~1.0.0",
+    "mustangostang/spyc": "^0.5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "AgencyBoilerplate\\Handlebars\\": "src/"
+    }
+  }
+}

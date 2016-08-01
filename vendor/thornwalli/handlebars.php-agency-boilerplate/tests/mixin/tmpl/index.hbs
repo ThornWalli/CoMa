@@ -1,0 +1,27 @@
+---
+
+---
+
+{{{mixin "sub-partial" list=example-list-array}}}
+{{#mixin "partial" this headline=headline-1}}
+  {{#content "primary"}}
+      <legend>{{{headline-list-array}}}</legend>
+      {{{mixin "sub-partial" example-list-array}}}
+  {{/content}}
+  {{#content "secondary"}}
+      <legend>{{{headline-list-object}}}</legend>
+      {{{mixin "sub-partial" example-list-object}}}
+  {{/content}}
+{{/mixin}}
+
+<br>
+
+{{#mixin "partial" this headline=headline-2}}
+  {{#content "primary"}}
+      <legend>{{{headline-list-array}}}</legend>
+      {{{mixin "sub-partial" example-list-array}}}
+  {{/content}}
+{{/mixin}}
+<br>
+{{#mixin "partial" this headline=headline-3}}
+{{/mixin}}
