@@ -69,7 +69,7 @@ coma.define(['module', 'underscore', 'jquery'], function (module, _, $) {
                 }
             });
         }
-
+console.log('$target',$target);
         var controllerClass = controllerClasses[$node.data('comaController')];
         if (!!controllerClass) {
             var controller = new controllerClass({el: $node.get(0), $target: $target, $items: $items});

@@ -10,7 +10,8 @@ class InstallEditor
     public static function editor_html($data)
     {
 
-        $id = $data['id'];
+      $id = $data['id'];
+      $name = $data['name'];
         $content = stripslashes($data['content']);
 
         if (!class_exists('_WP_Editors')) {
@@ -22,18 +23,18 @@ class InstallEditor
             self::$hasEditorJS = true;
         }
         \_WP_Editors::wp_link_dialog();
-        wp_editor($content, $id, ['textarea_name' => $id]);
+        wp_editor($content, $id, ['textarea_name' => $name]);
 
         $mce_init = self::get_mce_init($id);
         ?>
         <script type="text/javascript">
             (function ($, tinyMCEPreInit) {
                 $(function () {
-                    tinymce.remove("[name=\"<?php echo $id; ?>\"]");
+                    tinymce.remove("[name=\"<?php echo $name; ?>\"]");
                     tinyMCEPreInit.mceInit = jQuery.extend(tinyMCEPreInit.mceInit, <?php echo $mce_init ?>);
                     var initData = tinyMCEPreInit.mceInit['<?php echo $id; ?>'];
                     initData.language = 'en';
-                    initData.selector = "[name=\"<?php echo $id; ?>\"]";
+                    initData.selector = "[name=\"<?php echo $name; ?>\"]";
                     tinyMCE.init(initData);
                 });
             })(jQuery, tinyMCEPreInit);

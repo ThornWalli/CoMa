@@ -13,6 +13,7 @@ coma.define(['underscore', 'jquery', '../services/parser', '../services/logs', '
                             containerType: null,
                             showContainer: false,
                             id: null,
+                            parentId: null,
                             rank: 0,
                             ajax: null,
                             class: null,
@@ -317,7 +318,7 @@ coma.define(['underscore', 'jquery', '../services/parser', '../services/logs', '
 
         function editComponent(scope) {
             return new Promise(function (resolve, reject) {
-                if (!scope.model.get('id')) {
+                if (!scope.model.get('id') && this.type != 'area') {
                     reject('id is empty!');
                 } else if (!scope.model.get('ajax')) {
                     reject('ajax is empty!');
@@ -325,16 +326,31 @@ coma.define(['underscore', 'jquery', '../services/parser', '../services/logs', '
                 if (scope.model.get('wait')) {
                     return;
                 }
+
+                var data = {
+                    action: scope.type + '-select',
+                    class: scope.model.get('class'),
+                    position: scope.model.get('position')
+                };
+                if (this.model.get('id')) {
+                    data.id = scope.model.get('id');
+                }
+
+                if (scope.type == 'area') {
+                    if (this.model.get('parentId')) {
+                        data.parentId = this.model.get('parentId');
+                    } else if (this.model.get('pageId')) {
+                        data.pageId = this.model.get('pageId');
+                    }
+                }
+
                 scope.model.set('wait', true);
                 $.ajax({
                     cache: false,
                     method: 'post',
                     dataType: 'json',
                     data: {
-                        'coma-data': {
-                            action: this.type + '-select',
-                            id: this.model.get('id')
-                        }
+                        'coma-data': data
                     },
                     url: this.model.get('ajax')
                 }).done(function (resultData) {

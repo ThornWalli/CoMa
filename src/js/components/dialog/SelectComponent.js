@@ -21,7 +21,7 @@ coma.define(['underscore', 'jquery', './FormDialog', '../../services/history'], 
 
             events: function () {
                 return _.extend({
-                    'click [name="component"]': onClickRadio
+                    'click .radio-component': onClickRadio
                 }, FormDialog.prototype.events());
             },
 

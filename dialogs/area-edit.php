@@ -29,7 +29,7 @@ if(\CoMa\Helper\Base::getSession('area-id')) {
         'id' => $id,
         'ajax' => \CoMa\ADMIN_URL
     ], 'data'); ?>
-         data-target='.partial[data-partial="coma/component/controller/area"][data-id="<?php echo $id; ?>"]'>
+         data-target='.partial[data-partial="coma/component/controller/area"][data-id="<?php echo $area->getId(); ?>"]'>
 
         <?php
 

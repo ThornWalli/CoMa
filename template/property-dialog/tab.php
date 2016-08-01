@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @type PropertyDialogField $field
+ * @type CoMa\Base\PropertyDialog\Field $field
  */
 
 foreach ($this->getFields() as $field) {

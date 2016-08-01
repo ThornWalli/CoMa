@@ -9,58 +9,71 @@
 
 <div class="content">
 
-    <div class="partial wp-core-ui" data-partial="coma/assetboard/property-dialog">
+  <div class="partial wp-core-ui" data-partial="coma/assetboard/property-dialog">
 
 
-        <div class="partial coma-controller" data-coma-controller="components/TabContainer"
-             data-partial="coma/component/tab-container">
+    <div class="partial coma-controller" data-coma-controller="components/TabContainer"
+         data-partial="coma/component/tab-container">
 
-            <?php
+      <?php
 
-            if (count($this->tabs) > 1) {
-                echo "<ul>";
-            } else {
-                echo "<ul style=\"display: none;\">";
-            }
+      $hasTabs = false;
 
-            foreach ($this->tabs as $tab) {
-                $title = $tab->getTitle();
-                if (!$title) {
-                    $title = $tab->getName();
-                }
-                echo '<li><a href="#' . $tab->getName() . '" title="' . $title . '">' . $title . '</a></li>';
-            }
+      foreach ($this->tabs as $tab) {
+        if ($tab->hasFields()) {
+          $tabsHasFields++;
+        }
+      }
 
-            ?>
+      if ($tabsHasFields > 1) {
+        echo "<ul>";
+      } else {
+        echo "<ul style=\"display: none;\">";
+      }
 
-            </ul>
 
-            <section>
-                <?php
+      foreach ($this->tabs as $tab) {
+        if ($tab->hasFields()) {
+          $title = $tab->getTitle();
+          if (!$title) {
+            $title = $tab->getName();
+          }
+          echo '<li><a href="#' . $tab->getName() . '" title="' . $title . '">' . $title . '</a></li>';
+        }
+      }
 
-                foreach ($this->tabs as $tab) {
-                    echo '<article data-tab="#' . $tab->getName() . '">';
-                    $tab->render($properties);
-                    echo '</article>';
-                }
+      ?>
 
-                ?>
-            </section>
+      </ul>
 
-        </div>
+      <section>
+        <?php
 
-        <div class="buttons">
-            <?php
+        foreach ($this->tabs as $tab) {
+          if ($tab->hasFields()) {
+            echo '<article data-tab="#' . $tab->getName() . '">';
+            $tab->render($properties);
+            echo '</article>';
+          }
+        }
 
-            foreach ($this->buttons as $button) {
-                /**
-                 * @type \CoMa\Base\PropertyDialog\Button $button
-                 */
-                $button->render();
-            }
+        ?>
+      </section>
 
-            ?>
-        </div>
     </div>
+
+    <div class="buttons">
+      <?php
+
+      foreach ($this->buttons as $button) {
+        /**
+         * @type \CoMa\Base\PropertyDialog\Button $button
+         */
+        $button->render();
+      }
+
+      ?>
+    </div>
+  </div>
 
 </div>

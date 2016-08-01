@@ -29,8 +29,8 @@ class Cache
              */
             if ($propertyDialog instanceof PropertyDialog) {
                 $tab = $propertyDialog->addTab('cache', __('Cache', \CoMa\PLUGIN_NAME));
-                $tab->addCheckBox(\CoMa\Properties\Page\DISABLE_CACHE, 'Disable Cache?')->description('Disable cache on current page/post');
-                $tab->addCheckBox(\CoMa\Properties\Page\RESET_CACHE, 'Reset Cache?')->description('Reset cache on current page/post');
+                $tab->addCheckbox(\CoMa\Properties\Page\DISABLE_CACHE, 'Disable Cache?')->description('Disable cache on current page/post');
+                $tab->addCheckbox(\CoMa\Properties\Page\RESET_CACHE, 'Reset Cache?')->description('Reset cache on current page/post');
             }
             return $propertyDialog;
         });
@@ -93,7 +93,7 @@ class Cache
         if (!$id) {
             $id = Base::getPageId();
         }
-        return !Base::getPageProperty(\CoMa\Properties\Page\DISABLE_CACHE, $id);
+        return !Base::getPageProperty($id, \CoMa\Properties\Page\DISABLE_CACHE);
     }
 
     public static function getFile($id = null)

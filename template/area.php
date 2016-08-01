@@ -14,7 +14,7 @@ if (\CoMa\Helper\Base::roleHasCap(\CoMa\Roles\AREA)) {
 
      id: <?php echo $this->getId(); ?>
      class: <?php echo $this->getClass(); ?>
-     includePath: <?php echo $includePath; ?>
+     includePath: <?php  ?>
 
      -->
 
@@ -76,7 +76,7 @@ if (\CoMa\Helper\Base::roleHasCap(\CoMa\Roles\AREA)) {
                     }
 
                     if ($this->getControl('edit')) {
-                        if (\CoMa\Helper\Base::roleHasCap(\CoMa\Roles\AREA_EDIT) && $this->getPropertyDialog() != null) {
+                        if (\CoMa\Helper\Base::roleHasCap(\CoMa\Roles\AREA_EDIT) && $this->getPropertyDialog() != null && count($this->getPropertyDialog()) < 1) {
 
                             ?>
                             <li class="separator"></li>
@@ -122,7 +122,11 @@ if (\CoMa\Helper\Base::roleHasCap(\CoMa\Roles\AREA)) {
 
         <div class="content area-content"><?php
 
-            include($includePath);
+          if (array_key_exists('html', $options) && $options['html']) {
+            echo $options['html'];
+          } else {
+            include($options['path']);
+          }
 
             ?></div>
 

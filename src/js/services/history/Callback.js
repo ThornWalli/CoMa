@@ -1,4 +1,4 @@
-coma.define(['../../base/Model', '../../services/random'], function(Model, random) {
+coma.define(['../../base/Model', '../random'], function(Model, random) {
     return Model.extend({
         defaults: function() {
             return {

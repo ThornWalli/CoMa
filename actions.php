@@ -189,9 +189,10 @@ if (\CoMa\Helper\Base::POST('data') || CoMa\Helper\Base::GET('dialog') || CoMa\H
                     $area = null;
                     if ($postData['id']) {
                         $area = \CoMa\Helper\Component::getAreaById($postData['id']);
-                    } else if ($postData['position']) {
-                        $area = \CoMa\Helper\Component::getAreaByPosition($postData['position']);
                     }
+//                    else if ($postData['position']) {
+//                        $area = \CoMa\Helper\Component::getAreaByPosition($postData['position']);
+//                    }
                     $class = null;
                     if ($postData['class']) {
                         $class = $postData['class'];
@@ -201,10 +202,10 @@ if (\CoMa\Helper\Base::POST('data') || CoMa\Helper\Base::GET('dialog') || CoMa\H
                         $position = $area->getPosition();
                     }
                     if (!$area || !$area->getId()) {
-                        if ($postData['parent_id']) {
-                            $postData['parent_id'] = esc_sql($postData['parent_id']);
+                        if ($postData['parentId']) {
+                            $postData['parentId'] = esc_sql($postData['parentId']);
                         } else {
-                            $postData['page_id'] = esc_sql($postData['page_Id']);
+                            $postData['pageId'] = esc_sql($postData['pageId']);
                         }
                         \CoMa\Helper\Controller::saveController([
                             'page_id' => \CoMa\Helper\Base::getSession('page-id'),

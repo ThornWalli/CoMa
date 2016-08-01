@@ -47,7 +47,7 @@ coma.define(['underscore', 'jquery', '../../base/Controller', '../../base/DomMod
     }
 
     function onChangeValue(e) {
-        if (this.model.get('type') == 'page') {
+        if (this.model.get('pageType') == 'page') {
             // page
             this.$pageTypeValue.val(this.$pageValue.val());
         } else {

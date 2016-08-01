@@ -6,62 +6,86 @@ use CoMa\Helper\Base;
 
 class Area extends Controller
 {
-    const TYPE =Base::TYPE_AREA;
+   const TYPE = Base::TYPE_AREA;
 
-    const TEMPLATE_NAME = 'Area Component';
-    const TEMPLATE_ID = 'default-area';
-    const TEMPLATE_PATH = 'area';
+   const TEMPLATE_NAME = 'Area Component';
+   const TEMPLATE_ID = 'default-area';
+   const TEMPLATE_PATH = 'area';
 
-    const COMPONENT_ALIGNMENT = 'vertical';
+   const COMPONENT_ALIGNMENT = 'vertical';
 
-    public function __construct($properties = [], $id = null)
-    {
-        parent::__construct($properties, $id);
-        $this->setControls([]);
-    }
+   public function __construct($properties = [], $id = null)
+   {
+      parent::__construct($properties, $id);
+      $this->setControls([]);
+   }
 
-    public function render()
-    {
+   public function render($options = ['edit' => null, 'path' => null, 'html' => null])
+   {
+      if (!array_key_exists('path', $options) || !$options['path']) {
+         $options['path'] = $this->getTemplatePath() . '.php';
+      }
+      if (!array_key_exists('echo', $options)) {
+         $options['echo'] = false;
+      }
+      if (!array_key_exists('edit', $options)) {
+         $options['edit'] = false;
+      }
+      if (!array_key_exists('path', $options)) {
+         $options['path'] = null;
+      }
 
-        $this->setControls([]);
+      $this->setControls([]);
 
-        if ($this->getDisabled() && !Base::isEditMode()) {
-            return;
-        }
+      if ($this->getDisabled() && !Base::isEditMode()) {
+         return;
+      }
 
-        $includePath = $this->getTemplatePath() . '.php';
-        global $CONTENT_MANAGER_PARENT_COMPONENT;
-        $tmpParent = $CONTENT_MANAGER_PARENT_COMPONENT;
+      if ($options['echo']) {
+         ob_start();
+      }
 
-        do_action(\CoMa\WP\Action\BEFORE_RENDER, $this);
+      global $CONTENT_MANAGER_PARENT_COMPONENT;
+      $tmpParent = $CONTENT_MANAGER_PARENT_COMPONENT;
 
-        $CONTENT_MANAGER_PARENT_COMPONENT = $this;
-        if (Base::isEditMode()) {
-            include(\CoMa\PLUGIN_TEMPLATE_PATH . 'area.php');
-        } else {
-            include($includePath);
-        }
+      do_action(\CoMa\WP\Action\BEFORE_RENDER, $this);
 
-        do_action(\CoMa\WP\Action\AFTER_RENDER, $this);
+      $CONTENT_MANAGER_PARENT_COMPONENT = $this;
+      if (\CoMa\Helper\Base::isEditMode() && $options['edit'] == null || $options['edit']) {
+         include(\CoMa\PLUGIN_TEMPLATE_PATH . 'area.php');
+      } else {
+         if (array_key_exists('html', $options) && $options['html']) {
+            echo $options['html'];
+         } else {
+            include($options['path']);
+         }
+      }
 
-        $CONTENT_MANAGER_PARENT_COMPONENT = $tmpParent;
-        $includePath = null;
+      do_action(\CoMa\WP\Action\AFTER_RENDER, $this);
 
-    }
+      $CONTENT_MANAGER_PARENT_COMPONENT = $tmpParent;
 
-    public function getTemplatePath()
-    {
-        return \CoMa\THEME_TEMPLATE_PATH . '/area' . self::TEMPLATE_PATH;
-    }
+      $area = null;
+      if ($options['echo']) {
+         $area = ob_get_clean();
+      }
+      $includePath = null;
+      return $area;
+   }
 
-    /**
-     * Ruft alle Componten ab, die in der Area verwendet werden können
-     * @return array
-     */
-    public static function getClasses()
-    {
-        return [];
-    }
+   public function getTemplatePath()
+   {
+      return \CoMa\THEME_TEMPLATE_PATH . '/area' . self::TEMPLATE_PATH;
+   }
+
+   /**
+    * Ruft alle Componten ab, die in der Area verwendet werden können
+    * @return array
+    */
+   public static function getClasses()
+   {
+      return [];
+   }
 
 
 }

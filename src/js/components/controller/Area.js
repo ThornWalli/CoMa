@@ -56,9 +56,9 @@ coma.define(['underscore', 'jquery', '../../services/parser', '../../services/lo
         scope.model.on('loadComponent', onLoadComponent.bind(scope));
         scope.model.on('loadComponents', onLoadComponents.bind(scope));
         scope.model.on('refreshNode', onRefreshNode.bind(scope));
-        if (scope.targetModel) {
-            scope.model.set('pageId', scope.targetModel.get('pageId'));
-        }
+        //if (scope.targetModel) {
+        //    scope.model.set('pageId', scope.targetModel.get('pageId'));
+        //}
     }
 
     function onChangeId(model, id) {

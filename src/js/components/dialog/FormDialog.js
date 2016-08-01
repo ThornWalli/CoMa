@@ -36,43 +36,82 @@ coma.define(['underscore', 'jquery', '../../base/Controller', '../../base/DomMod
 
             getProperties: function () {
 
-                var properties = {};
+                var tabProperties = {}, properties;
 
                 tinyMCE.triggerSave();
 
                 this.$('input, textarea, select').not('[type=button],[type=submit]').each(function (i, node) {
                     var $node = $(node);
                     var name = $node.attr('name');
-
-
-                    var value = getNodeValue($node) || '';
-                    value = value.replace(/\\/g, '\\\\');
-                    value = encodeURIComponent(value);
-                    var match;
-                    if (name) {
-                        match = name.match(/(.*)\[(.*)\]/);
-                    }
-                    if (match) {
-                        if (!properties[match[1]]) {
-                            properties[match[1]] = match.length > 2 ? {} : [];
-                        }
-
-                        if (match.length > 2) {
-                            if (!properties[match[1]][match[2]]) {
-                                properties[match[1]][match[2]] = [];
+                    if (!!name) {
+                        
+                        var value = getNodeValue($node) || '';
+                        value = value.replace(/\\/g, '\\\\');
+                        value = encodeURIComponent(value);
+                        
+                        var regex = /\[([^[]+)*\]/g;
+                        var match;
+                        var path = [];
+                        while ((match = regex.exec(name)) !== null) {
+                            if (match.index === regex.lastIndex) {
+                                regex.lastIndex++;
                             }
-                            properties[match[1]][match[2]].push(value);
-                        } else {
-                            properties[match[1]].push(value);
+                            path.push(match[1]);
                         }
-                    } else if (name) {
-                        if (!$node.is('[type="radio"]') || $node.is('[type="radio"]:checked') && value) {
-                            properties[name] = value;
+                        if (path.length > 0) {
+                            var tabName = name.match(/^([^[]*)/g)[0];
+                            if (!tabProperties[tabName]) {
+                                tabProperties[tabName] = {};
+                            }
+                            if ($node.is('[type="checkbox"]') && !value) {
+                                value = false;
+                                return;
+                            }
+                            setVar(tabProperties[tabName], path, value);
                         }
+
                     }
+
+                    //var value = getNodeValue($node) || '';
+                    //value = value.replace(/\\/g, '\\\\');
+                    //value = encodeURIComponent(value);
+                    //var match, _properties = {};
+                    //if (name) {
+                    //    match = name.match(/(.*)\[(.*)\]/);
+                    //}
+                    //if (match) {
+                    //    
+                    //    _properties = {};
+                    //    tabName = match[1];
+                    //    if (!properties[tabName]) {
+                    //        properties[tabName] = {};
+                    //    }
+                    //    if (!properties[match[2]]) {
+                    //        _properties[match[2]] = match.length > 2 ? {} : [];
+                    //    }
+                    //    if (match.length > 3) {
+                    //        if (!_properties[match[2]][match[3]]) {
+                    //            _properties[match[2]][match[3]] = [];
+                    //        }
+                    //        _properties[match[2]][match[3]].push(value);
+                    //    } else {
+                    //        _properties[match[2]]=value;
+                    //    }
+                    //    
+                    //} else if (name) {
+                    //    if (!$node.is('[type="radio"]') || $node.is('[type="radio"]:checked') && value) {
+                    //        _properties[name] = value;
+                    //    }
+                    //}
+                    //
+                    //if (tabName) {
+                    //    properties[tabName] = _.extend(properties[tabName], _properties);
+                    //}
+
                 });
 
-                return properties;
+                console.log(tabProperties);
+                return tabProperties;
             }
 
 
@@ -137,6 +176,26 @@ coma.define(['underscore', 'jquery', '../../base/Controller', '../../base/DomMod
         }.bind(this)).catch(function (err) {
             console.error(err);
         });
+
+    }
+
+    function setVar(data, path, value) {
+        if (!data) {
+            data = [];
+        }
+        var name = path.shift();
+        console.log(name);
+
+        if (!data[name] || typeof data != 'object') {
+            data[name] = {};
+        }
+        if (path.length > 0) {
+            data[name] = setVar(data[name], path, value);
+        } else {
+            data[name] = value;
+        }
+
+        return data;
 
     }
 

@@ -74,11 +74,19 @@ module.exports = function (grunt) {
         },
 
         po2mo: {
-            files: {
-                src: '../src/languages/coma-de_DE.po',
-                dest: '../languages/coma-de_DE.mo'
+            'plugin' : {
+                files: {
+                    '../src/languages/coma-de_DE.po': '../languages/coma-de_DE.mo',
+                    '../src/languages/coma-en_US.po': '../languages/coma-en_US.mo'
+                }
+            },
+            'theme' : {
+                files: {
+                    '../../../themes/coma-theme/languages/po/de_DE.po': '../../../themes/coma-theme/languages/de_DE.mo'
+                }
             }
         }
+
 
     });
 
@@ -95,7 +103,8 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('build', ['build-js', 'build-sass', 'build-language']);
     grunt.registerTask('build-sass', ['sass', 'postcss:dist']);
-    grunt.registerTask('build-language', ['po2mo']);
+    grunt.registerTask('build-language', ['po2mo:plugin']);
+    grunt.registerTask('build-theme-language', ['po2mo:theme']);
 
 
     grunt.registerTask('build-js', ['requirejs:main', 'remove-coma-var-defined']);
@@ -103,14 +112,14 @@ module.exports = function (grunt) {
     grunt.registerTask('build-js-complete', ['build-js-libs', 'build-js']);
 
 
-    grunt.registerTask('build-require', ['requirejs:require','remove-coma-var-defined']);
+    grunt.registerTask('build-require', ['requirejs:require', 'remove-coma-var-defined']);
     grunt.registerTask('remove-coma-var-defined', function () {
         // remove var coma;
         var replace = require("replace");
         replace({
             regex: /var coma;/g,
             replacement: '',
-            paths: ['../js/require.js','../js/main.js'],
+            paths: ['../js/require.js', '../js/main.js'],
             recursive: true,
             silent: true
         });

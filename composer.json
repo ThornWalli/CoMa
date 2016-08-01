@@ -1,0 +1,11 @@
+{
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate"
+    }
+  ],
+  "require": {
+    "thornwalli/handlebars.php-agency-boilerplate": "dev-feature/helper-if_var"
+  }
+}

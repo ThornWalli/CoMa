@@ -1,6 +1,5 @@
 coma.define(['underscore', 'jquery', 'base/Controller', 'services/logs'], function (_, $, Controller, logs) {
 
-
     return Controller.extend({
             rowTemplate: null,
             model: Controller.prototype.model.extend({
@@ -12,7 +11,7 @@ coma.define(['underscore', 'jquery', 'base/Controller', 'services/logs'], functi
             events: function () {
                 return {
                     'click .add-field': onClickAddField,
-                    'click .remove>a': onClickRemove,
+                    'click a.remove': onClickRemove,
                 }
             },
 
@@ -37,14 +36,25 @@ coma.define(['underscore', 'jquery', 'base/Controller', 'services/logs'], functi
         e.preventDefault();
 
         var $row = $(this.rowTemplate());
-        $row.find('.partial[data-partial="coma/assetboard/property-dialog/field-row"]').each(function (i, node){
+        $row.find('.partial[data-partial="coma/assetboard/property-dialog/field-row"]').each(function (i, row) {
             var id = _.uniqueId('property-dialog-');
-            var $node = $(node);
-            $node.find('[id]').attr('id', id);
-            $node.find('[for]').attr('for', id);
+            var $row = $(row);
+            $row.find('[id]').attr('id', id);
+            $row.find('[for]').attr('for', id);
         });
 
         this.$rows.append($row);
+
+
+        function refreshIndex(scope) {
+            scope.$rows.children().each(function (i, row) {
+                row.querySelectorAll('[name*="[%index%]"]').forEach(function (node) {
+                    node.setAttribute('name', node.getAttribute('name').replace(/%index%/g, i))
+                });
+            });
+        }
+
+        refreshIndex(this);
 
     }
 

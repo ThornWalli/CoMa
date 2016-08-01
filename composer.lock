@@ -1,0 +1,184 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "73a62c52620eea0339814f0b6098d216",
+    "content-hash": "4086217667c611956e15ebe9c972e525",
+    "packages": [
+        {
+            "name": "justblackbird/handlebars.php-helpers",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JustBlackBird/handlebars.php-helpers.git",
+                "reference": "f4d674f47935e4f3d7ac95489b765c97693c3244"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JustBlackBird/handlebars.php-helpers/zipball/f4d674f47935e4f3d7ac95489b765c97693c3244",
+                "reference": "f4d674f47935e4f3d7ac95489b765c97693c3244",
+                "shasum": ""
+            },
+            "require": {
+                "xamin/handlebars.php": "~0.10.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JustBlackBird\\HandlebarsHelpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitriy Simushev",
+                    "email": "simushevds@gmail.com"
+                }
+            ],
+            "description": "A set of helpers for Handlebars.php template engine.",
+            "time": "2016-02-20 13:42:54"
+        },
+        {
+            "name": "mustangostang/spyc",
+            "version": "0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mustangostang/spyc.git",
+                "reference": "dc4785b4d7227fd9905e086d499fb8abfadf9977"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mustangostang/spyc/zipball/dc4785b4d7227fd9905e086d499fb8abfadf9977",
+                "reference": "dc4785b4d7227fd9905e086d499fb8abfadf9977",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Spyc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT License"
+            ],
+            "authors": [
+                {
+                    "name": "mustangostang",
+                    "email": "vlad.andersen@gmail.com"
+                }
+            ],
+            "description": "A simple YAML loader/dumper class for PHP",
+            "homepage": "https://github.com/mustangostang/spyc/",
+            "keywords": [
+                "spyc",
+                "yaml",
+                "yml"
+            ],
+            "time": "2013-02-21 10:52:01"
+        },
+        {
+            "name": "thornwalli/handlebars.php-agency-boilerplate",
+            "version": "dev-feature/helper-if_var",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate",
+                "reference": "7807d2b649e6fba0dacd7bddc40cfd9de0430c6f"
+            },
+            "require": {
+                "justblackbird/handlebars.php-helpers": "~1.0.0",
+                "mustangostang/spyc": "^0.5.1",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AgencyBoilerplate\\Handlebars\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thorn-Welf Walli",
+                    "email": "lammpee@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate/issues",
+                "source": "https://github.com/ThornWalli/handlebars.php-agency-boilerplate"
+            },
+            "time": "2016-06-11 17:41:31"
+        },
+        {
+            "name": "xamin/handlebars.php",
+            "version": "v0.10.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/XaminProject/handlebars.php.git",
+                "reference": "5e1db1d1c7969fae32eab331a3b4d9b93257a709"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/XaminProject/handlebars.php/zipball/5e1db1d1c7969fae32eab331a3b4d9b93257a709",
+                "reference": "5e1db1d1c7969fae32eab331a3b4d9b93257a709",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Handlebars": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "fzerorubigd",
+                    "email": "fzerorubigd@gmail.com"
+                },
+                {
+                    "name": "Behrooz Shabani (everplays)",
+                    "email": "everplays@gmail.com"
+                }
+            ],
+            "description": "Handlebars processor for php",
+            "homepage": "https://github.com/XaminProject/handlebars.php",
+            "time": "2015-08-06 22:16:36"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "thornwalli/handlebars.php-agency-boilerplate": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
